@@ -281,7 +281,7 @@ class TurnButtons:
                     asyncio.create_task(thread.edit(archived=True))
         await game.upkeep(interaction)
         drawing = DrawHelper(game.gamestate)
-        if game.gamestate["roundNum"] < 9:
+        if game.gamestate["roundNum"] < 10:
             await interaction.channel.send(f"Tech Available At Start Of Round {game.gamestate['roundNum']}",
                                            file=await asyncio.to_thread(drawing.show_available_techs))
             nextPlayer = TurnButtons.getFirstPlayer(game)
